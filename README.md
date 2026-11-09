@@ -1,55 +1,97 @@
-<h1 align="center">💼 Employee Salary Analysis</h1> <p align="center"> Console application in Java that reads employees from a CSV file<br> and generates salary reports using the Streams API. </p> <p align="center"> <img src="https://img.shields.io/badge/Java-25%2B-orange?logo=openjdk&logoColor=white" alt="Java 25+"> <img src="https://img.shields.io/badge/IDE-IntelliJ%20IDEA-blue?logo=intellijidea&logoColor=white" alt="IntelliJ IDEA"> <img src="https://img.shields.io/badge/Status-Study%20project-green" alt="Status"> </p>
-📑 Table of Contents
-About
-Features
-Requirements
-Input file format
-How to run
-How it works
-Project structure
-Possible improvements
-📖 About
+# Employee Salary Analysis
 
-The program loads a list of employees (name, e-mail and salary) from a text file and answers two questions about the data, using Java Streams.
+A Java console application that reads employee data from a CSV file and generates salary reports using the **Java Streams API**.
 
-✨ Features
-#	Report	Description
-1	E-mails above a salary	Lists the e-mails of every employee whose salary is greater than a value informed by the user
-2	Total salary of "M" names	Sums the salaries of all employees whose name starts with M (case-insensitive)
-🧰 Requirements
-Java 25 or later (the entry point is declared as static void main())
-Any IDE (built with IntelliJ IDEA) or the javac / java command line
+![Java](https://img.shields.io/badge/Java-25%2B-orange?logo=openjdk&logoColor=white)
+![IntelliJ IDEA](https://img.shields.io/badge/IDE-IntelliJ%20IDEA-blue?logo=intellijidea&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Study%20Project-green)
 
-[!NOTE] On older Java versions, change the entry point to public static void main(String[] args).
+---
 
-📄 Input file format
+## Table of Contents
 
-A plain text file with one employee per line, as name,email,salary:
+- [About](#about)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Input File Format](#input-file-format)
+- [How to Run](#how-to-run)
+- [How It Works](#how-it-works)
+- [Project Structure](#project-structure)
+- [Possible Improvements](#possible-improvements)
 
-csv
+---
+
+## About
+
+This project was developed to practice Java programming, file reading, and data processing using the **Streams API**.
+
+The application loads employee information from a CSV file and generates two reports based on the data.
+
+## Features
+
+| # | Report | Description |
+|---|---|---|
+| 01 | **Emails Above a Salary** | Lists the email addresses of employees whose salary is greater than a value provided by the user. |
+| 02 | **Total Salary of Employees with M Names** | Calculates the total salary of employees whose names start with the letter `M` (case-insensitive). |
+
+## Requirements
+
+- Java 25 or later.
+- IntelliJ IDEA or another Java IDE.
+- Alternatively, `javac` and `java` for command-line execution.
+
+> **Note:** Java versions older than 25 require the traditional entry point: `public static void main(String[] args)`.
+
+## Input File Format
+
+The application expects a CSV file containing one employee per line, following this format:
+
+```csv
 maria,maria@gmail.com,3200.00
 alex,alex@gmail.com,1900.00
 marco,marco@gmail.com,1700.00
 bob,bob@gmail.com,3500.00
 anna,anna@gmail.com,2800.00
-Fields are separated by commas, with no header line.
-The salary uses a dot as the decimal separator (e.g. 3200.00).
-▶️ How to run
-Compile and run the Main class.
-Enter the full path of the input file when prompted.
-Enter the minimum salary.
+```
 
-Example session
+**File specifications:**
 
-text
-Enter full file path:
-C:\data\employees.csv
-Enter salary:
-3300
+- Fields must be separated by commas.
+- No header line is required.
+- Salary values must use a dot (`.`) as the decimal separator.
+
+## How to Run
+
+1. Clone this repository.
+2. Open the project in IntelliJ IDEA or your preferred Java IDE.
+3. Compile and run the `Main` class.
+4. Enter the full path to the CSV file when prompted.
+5. Enter the minimum salary for the first report.
+
+### Example Execution
+
+```text
+Enter full file path: C:\data\employees.csv
+Enter salary: 3300
 
 Email of people whose salary is more than 3300.0:
 bob@gmail.com
 
 Sum of salary of people whose name starts with 'M':
-
 4900.00
+```
+
+## How It Works
+
+The application uses the **Java Streams API** to process employee data:
+
+- **File Reading:** Loads employee records from the CSV file.
+- **Filtering:** Selects employees based on salary and name criteria.
+- **Mapping:** Extracts email addresses for the first report.
+- **Reduction:** Calculates the total salary for employees whose names start with `M`.
+
+
+
+<p align="center">
+  Developed as a Java study project.
+</p>
